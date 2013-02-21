@@ -1172,4 +1172,19 @@
     <!-- dynamic changelog -->
     <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
     <string name="dynamic_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
+
+    <!-- Clock | Date | SlimsROM -->
+    <string name="clock_date_display">Date</string>
+    <string name="clock_date_display_summary">Display custom date before the clock</string>
+    <string name="clock_date_style">Date style</string>
+    <string name="clock_date_format">Date format</string>
+    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="clock_date_string_edittext_summary">Enter string</string>
+    <string name="dont_show_default">Don\'t show (default)</string>
+    <string name="normal">Normal</string>
+    <string name="small_date">Small date</string>
+    <string name="regular_date">Regular date</string>
+    <string name="lowercase">Lowercase</string>
+    <string name="uppercase">Uppercase</string>
+    <string name="custom_java_format">Custom Java Format</string>
 </resources>
