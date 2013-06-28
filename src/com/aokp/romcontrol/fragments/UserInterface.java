@@ -102,6 +102,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_STATUS_BAR_AUTO_NOTIFICATION = "status_bar_auto_notification";
     private static final CharSequence PREF_HIDDEN_STATUSBAR_PULLDOWN = "hidden_statusbar_pulldown";
     private static final CharSequence PREF_HIDDEN_STATUSBAR_PULLDOWN_TIMEOUT = "hidden_statusbar_pulldown_timeout";
+    private static final CharSequence PREF_STATUS_BAR_CARRIER_LABEL = "status_bar_carrier_label";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -115,6 +116,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     CheckBoxPreference mAllow270Rotation;
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mStatusBarNotifCount;
+    CheckBoxPreference mStatusBarCarrierLabel;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
     Preference mCustomLabel;
@@ -181,6 +183,10 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUSBAR_NOTIF_COUNT, false));
+        
+        mStatusBarCarrierLabel = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_CARRIER_LABEL);
+        mStatusBarCarrierLabel.setChecked(Settings.System.getBoolean(mContentResolver,
+                Settings.System.STATUS_BAR_CARRIER, false));
 
         mDisableBootAnimation = (CheckBoxPreference) findPreference(PREF_DISABLE_BOOTANIM);
 
@@ -351,6 +357,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         } else if (preference == mStatusBarNotifCount) {
             Settings.System.putBoolean(mContentResolver,
                     Settings.System.STATUSBAR_NOTIF_COUNT,
+                    ((TwoStatePreference) preference).isChecked());
+            return true;
+        } else if (preference == mStatusBarCarrierLabel) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.STATUS_BAR_CARRIER,
                     ((TwoStatePreference) preference).isChecked());
             return true;
         } else if (preference == mDisableBootAnimation) {

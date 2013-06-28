@@ -267,6 +267,9 @@
     <string name="statusbar_pulldown_notification">Pulldown &amp; Notifications</string>
     <string name="hidden_statusbar_pulldown_timeout_title">Hidden Statusbar Pulldown Timeout</string>
     <string name="hidden_statusbar_pulldown_timeout_summary">Timeout for Hidden Statusbar window</string>
+    <!-- show carrier label -->
+    <string name="show_carrier_label_title">carrier label</string>
+    <string name="show_carrier_label_summary">Show Carrier label in statsbar</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD Density</string>
