@@ -93,8 +93,11 @@
     <string name="title_show_torch_toggle">显示灯光开关</string>
     <string name="title_show_airplane_toggle">显示飞行模式开关</string>
     <string name="title_show_navbar_hide">显示导航栏和状态栏控制</string>
-    <string name="summary_show_navbar_hide">选中将显示导航栏和状态栏开关</string>
+    <string name="summary_show_navbar_hide">选中将显示状态栏开关</string>
     <string name="title_show_volume_state_toggle">显示声音状态</string>
+    <string name="title_show_profiles_toggle">显示情景模式</string>
+    <string name="title_show_expanded_desktop">显示全屏模式</string>
+    <string name="summary_show_expanded_desktop">显示全屏模式开关</string>
     <string name="title_show_reboot_keyguard">锁屏时显示重新启动</string>
     <string name="summary_show_reboot_keyguard">启用将在锁屏时显示重新启动选项</string>
 
@@ -154,7 +157,6 @@
     <string name="display_cat">显示</string>
     <string name="recents_cat">近期任务</string>
     <string name="tabletUI_cat">平板界面</string>
-    <string name="enable_volume_options">启用音量面板</string>
     <string name="status_bar_notif_count_title">显示通知数量</string>
     <string name="status_bar_notif_count_summary">在状态栏显示未查看的通知数量</string>
     <string name="vibrate_notif_expand_title">展开振动</string>
@@ -187,12 +189,8 @@
     <string name="rotate_180_summary">允许设备倒置显示</string>
     <string name="rotate_270_title">允许 270° 旋转</string>
     <string name="rotate_270_summary">允许设备向右旋转显示</string>
-    <string name="recent_kill_all">启用“全部结束”按钮</string>
-    <string name="recent_kill_all_summary">在系统的近期任务界面显示“全部结束”按钮</string>
     <string name="ram_bar">近期 RAM 栏</string>
     <string name="ram_bar_summary">在近期任务显示 RAM 使用情况</string>
-    <string name="longpress_to_kill">长按返回键结束程序</string>
-    <string name="longpress_to_kill_summary">长时间按住返回键可以强行结束当前程序</string>
     <string name="tablet_ui">强制使用平板界面</string>
     <string name="tablet_ui_summary">可强制使用平板设备专用的界面（需重启）</string>
     <string name="hide_extras">隐藏多余内容</string>
@@ -228,6 +226,18 @@
     <string name="transparency_dialog_transparency">主屏幕不透明度</string>
     <string name="transparency_dialog_transparency_keyguard">锁屏界面不透明度</string>
     <string name="transparency_dialog_lockscreen">锁屏界面</string>
+    <string name="statusbar_behaviour">状态栏行为</string>
+    <string name="statusbar_visible">始终显示</string>
+    <string name="statusbar_hide_title">始终隐藏</string>
+    <string name="statusbar_hide_summary">从三种不同的状态栏行为中选择</string>
+    <string name="statusbar_notification">通知显示</string>
+    <string name="statusbar_pulldown">下拉显示</string>
+    <string name="statusbar_pulldown_notification">下拉显示 &amp; 通知显示</string>
+    <string name="hidden_statusbar_pulldown_timeout_title">下拉显示超时设置</string>
+    <string name="hidden_statusbar_pulldown_timeout_summary">隐藏状态栏后下拉显示的时间</string>
+    <!-- show carrier label -->
+    <string name="show_carrier_label_title">运营商名称</string>
+    <string name="show_carrier_label_summary">在状态栏显示运营商名称</string>
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -285,6 +295,8 @@
     <string name="toggle_text_color_title">开关文字颜色</string>
     <string name="toggle_favcontact_title">收藏联系人</string>
     <string name="toggle_favcontact_summary">选择你收藏的联系人</string>
+    <string name="toggle_collapse_generic_title">点击开关后收起通知栏</string>
+    <string name="toggle_collapse_generic_summary">开关动作执行后通知栏将被收起</string>
     <string name="toggle_enable_fasttoggle_title">启用快捷开关</string>
     <string name="toggle_enable_fasttoggle_summary">覆盖默认动作</string>
     <string name="toggle_choose_fasttoggle_side_title">选择快捷开关侧边</string>
@@ -326,6 +338,7 @@
     <string name="click_collapse">点击时</string>
     <string name="long_collapse">长按时</string>
     <string name="both_collapse">点击或长按时</string>
+    <string name="custom_toggle_colors">自定义颜色</string>
 
     <!-- Statusbar | Clock 状态栏|时钟 -->
     <string name="clock_title_enable">时钟风格</string>
@@ -344,6 +357,29 @@
     <string name="title_clock_doubleclick">双击时钟动作</string>
     <string name="title_clock_longclick">长按时钟动作</string>
     <string name="title_clock_shortclick">点击时钟动作</string>
+
+    <!-- Tile background style and text color -->
+    <string name="tile_background_style_title">磁贴背景风格</string>
+    <string name="tile_background_style_summary">可选任意色彩，实色填充或默认背景</string>
+    <string name="tile_background_color_title">设置磁贴背景颜色</string>
+    <string name="tile_background_pressed_color_title">设置磁贴按键背景颜色</string>
+    <string name="tile_background_random">任意色彩</string>
+    <string name="tile_background_color_fill">实色填充</string>
+    <string name="tile_background_default">默认背景</string>
+    <string name="tile_custom_background_dialog_title">磁贴背景风格</string>
+    <string name="tile_text_color_title">设置磁贴文字颜色</string>
+
+    <!-- Random colors -->
+    <string name="random_colors">任意色彩</string>
+    <string name="random_colors_title">设置任意色彩</string>
+    <string name="random_colors_summary">可设定任意色彩风格</string>
+    <string name="random_colors_reset_title">重置任意色彩</string>
+    <string name="color_one">颜色 1</string>
+    <string name="color_two">颜色 2</string>
+    <string name="color_three">颜色 3</string>
+    <string name="color_four">颜色 4</string>
+    <string name="color_five">颜色 5</string>
+    <string name="color_six">颜色 6</string>
 
     <!-- Toggle Strings to be called from device overlays 开关文本 -->
     <string name="toggle_airplane_mode">飞行模式</string>
@@ -395,8 +431,11 @@
     <string name="hide_signal_summary">当信号发生变化时生效</string>
     <string name="wifi_signal_style">WiFi 信号显示风格</string>
     <string name="wifi_signal_color_title">WiFi 信号颜色</string>
-    <string name="alt_signal_title">更改信号布局</string>
-    <string name="alt_signal_summary">使用网络与信号分离的布局（姜饼风格）</string>
+    <string name="alt_signal_title">隐藏信号</string>
+    <string name="alt_signal_summary">将隐藏 WiFi 和信号图标</string>
+    <!-- show network speed -->
+    <string name="show_network_speed_title">当前网速</string>
+    <string name="show_network_speed_summary">在状态栏显示当前网速</string>
 
     <!-- Color Picker 颜色选择器-->
     <string name="dialog_color_picker">颜色选择器</string>
@@ -469,8 +508,6 @@
     <string name="navbar_widgets_delete">删除小部件</string>
     <string name="navigation_bar_menu_arrow_keys_title">箭头按键</string>
     <string name="navigation_bar_menu_arrow_keys_summary">在导航栏显示箭头按键用于准确定位输入光标或选择菜单</string>
-    <string name="statusbar_hide_title">隐藏状态栏</string>
-    <string name="statusbar_hide_summary">选中将完全隐藏状态栏</string>
     <string name="navigation_bar_alpha_title">状态栏与导航栏透明度</string>
     <string name="navbar_hide_enable_title">隐藏导航栏</string>
     <string name="systembar_hide_enable_title">隐藏系统栏</string>
@@ -520,7 +557,7 @@
     <!-- Ribbon 操作区 -->
     <string name="ribbon_dialog_arrange_title">操作区布局</string>
     <string name="ribbon_chooser_instructions">选择需设置的操作区</string>
-    <string name="ribbon_instructions">点击图标选择动作或删除</string>
+    <string name="ribbon_instructions">点击图标选择动作或删除\n点击菜单查看更多选项</string>
     <string name="ribbon_targets_cat">操作区选项</string>
     <string name="enable_ribbon_text_title">显示应用名称</string>
     <string name="enable_ribbon_vibrate_title">触摸滑动区时振动</string>
@@ -691,8 +728,11 @@
     <string name="lockscreen_targets_title">锁屏目标</string>
     <string name="lockscreen_targets_summary">查看或自定义锁屏界面的快捷方式</string>
     <string name="lockscreen_target_longpress_text">长按动作</string>
-    <string name="lockscreen_glow_torch_text">辉光灯</string>
-    <string name="lockscreen_glow_torch_summary">按住锁屏圈的中央开启灯光，松开手指关闭灯光。</string>
+    <string name="lockscreen_glow_torch_text">快速手电筒</string>
+    <string name="lockscreen_glow_torch_summary">长按解锁环或导航环中心打开手电筒，松开手指关闭</string>
+    <string name="lockscreen_torch_off">关闭</string>
+    <string name="lockscreen_torch_lockcircle">解锁环</string>
+    <string name="lockscreen_torch_navring">导航环</string>
     <string name="lockscreen_camera">相机</string>
     <string name="lockscreen_unlock">解锁</string>
     <string name="save_error">无法保存目标！至少需要一个目标解锁！</string>
@@ -873,7 +913,15 @@
     <!-- Battery styles 电量风格 -->
     <string name="icon_with_text">带文字的图标</string>
     <string name="icon_with_centered_text">带居中文字的图标</string>
-    <string name="circlemod">环形电量图标</string>
+    <string name="rb_battery1">环形图标</string>
+    <string name="rb_battery2">方形图标</string>
+    <string name="rb_battery3">车速表图标</string>
+    <string name="rb_battery4">赛车计图标</string>
+    <string name="rb_battery5">压力表图标</string>
+    <string name="rb_battery6">行星图标</string>
+    <string name="rb_battery7">滑动条图标</string>
+    <string name="rb_battery8">砖块图标</string>
+    <string name="rb_battery9">疾冲图标</string>
 
     <!-- NavBar 导航栏 -->
     <string name="right">居右</string>
@@ -1022,4 +1070,20 @@
     <!-- dynamic changelog 动态更新日志 -->
     <string name="dynamic_changelog_title">动态更新日志</string>
     <string name="dynamic_changelog_summary">从Gerrit实例拉取交互式更新日志</string>
+
+    <!-- Clock | Date | SlimsROM -->
+    <string name="clock_date_display">日期</string>
+    <string name="clock_date_display_summary">在时钟前显示自定义日期</string>
+    <string name="clock_date_style">日期风格</string>
+    <string name="clock_date_format">日期格式</string>
+    <string name="clock_date_string_edittext_title">输入符串(EE=星期 D=日 M=月 Y=年，外语系统可指定使用大小楷): 例如 MM/dd/yy</string>
+    <string name="clock_date_string_edittext_summary">输入格式</string>
+    <string name="dont_show_default">不要显示 (默认)</string>
+    <string name="normal">正常</string>
+    <string name="small_date">缩小字体</string>
+    <string name="regular_date">正常字体</string>
+    <string name="lowercase">小楷</string>
+    <string name="uppercase">大楷</string>
+    <string name="custom_java_format">自定义 Java 字串</string>
+
 </resources>
