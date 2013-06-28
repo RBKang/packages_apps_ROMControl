@@ -85,8 +85,8 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
 
         mClockDateDisplay = (ListPreference) findPreference(PREF_CLOCK_DATE_DISPLAY);
         mClockDateDisplay.setOnPreferenceChangeListener(this);
-        mClockWeekday.setValue(Integer.toString(Settings.System.getInt(mContentRes,
-                Settings.System.STATUSBAR_CLOCK_WEEKDAY, 0)));
+        mClockDateDisplay.setValue(Integer.toString(Settings.System.getInt(mContentRes,
+                Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0)));
         mClockDateDisplay.setSummary(mClockDateDisplay.getEntry());
 
         mClockDateStyle = (ListPreference) findPreference(PREF_CLOCK_DATE_STYLE);
@@ -114,7 +114,6 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
         mClockDoubleClick.setOnPreferenceChangeListener(this);
         mClockDoubleClick.setSummary(getProperSummary(mClockDoubleClick));
 
-        if (Integer.parseInt(mClockStyle.getValue()) == 0) {
         boolean mClockDateToggle = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0) != 0;
         if (!mClockDateToggle) {
@@ -142,15 +141,7 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_CLOCK_STYLE, val);
-            if (val == 0) {
-                mClockAmPmstyle.setEnabled(false);
-                mColorPicker.setEnabled(false);
-                mClockWeekday.setEnabled(false);
-            } else {
-                mClockAmPmstyle.setEnabled(true);
-                mColorPicker.setEnabled(true);
-                mClockWeekday.setEnabled(true);
-            }
+
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
                     .valueOf(newValue)));
