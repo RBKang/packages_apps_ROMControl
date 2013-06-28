@@ -21,6 +21,7 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
     ColorPickerPreference mWifiColorPicker;
     CheckBoxPreference mHideSignal;
     CheckBoxPreference mStatusBarTraffic;
+    ColorPickerPreference mTrafficColorPicker;
     CheckBoxPreference mAltSignal;
 
     @Override
@@ -53,7 +54,19 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mStatusBarTraffic = (CheckBoxPreference) findPreference("status_bar_traffic");
         mStatusBarTraffic.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUS_BAR_TRAFFIC, false));
+        mTrafficColorPicker = (ColorPickerPreference) findPreference("status_bar_traffic_color");
+        mTrafficColorPicker.setOnPreferenceChangeListener(this);
+        defaultColor = getResources().getColor(
+                com.android.internal.R.color.holo_blue_light);
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_TRAFFIC_COLOR, defaultColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mTrafficColorPicker.setSummary(hexColor);
+        mTrafficColorPicker.setNewPreviewColor(intColor);
 
+        if (isTablet(mContext)) {
+            mStatusBarTraffic.setEnabled(false);
+        }
 
         mAltSignal = (CheckBoxPreference) findPreference("alt_signal");
         mAltSignal.setChecked(Settings.System.getBoolean(mContentRes,
@@ -125,6 +138,18 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT_COLOR, intHex);
+            return true;
+
+        } else if (preference == mTrafficColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mContentRes,
+
+Settings.System.STATUS_BAR_TRAFFIC_COLOR, intHex);
+            Helpers.restartSystemUI();
             return true;
         }
         return false;

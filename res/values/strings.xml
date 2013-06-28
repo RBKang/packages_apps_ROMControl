@@ -481,8 +481,9 @@
     <string name="alt_signal_summary">Will hide WiFi and Mobile signal</string>
 
     <!-- show network speed -->
-    <string name="show_network_speed_title">network speed</string>
+    <string name="show_network_speed_title">Network speed</string>
     <string name="show_network_speed_summary">Show network speed in statsbar</string>
+    <string name="status_bar_traffic_color_title">Network speed Custom Color</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
