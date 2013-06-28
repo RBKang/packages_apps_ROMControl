@@ -56,13 +56,13 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
                 Settings.System.STATUS_BAR_TRAFFIC, false));
         mTrafficColorPicker = (ColorPickerPreference) findPreference("status_bar_traffic_color");
         mTrafficColorPicker.setOnPreferenceChangeListener(this);
-        defaultColor = getResources().getColor(
-                com.android.internal.R.color.holo_blue_light);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_TRAFFIC_COLOR, defaultColor);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mTrafficColorPicker.setSummary(hexColor);
-        mTrafficColorPicker.setNewPreviewColor(intColor);
+//        defaultColor = getResources().getColor(
+//                com.android.internal.R.color.holo_blue_light);
+//        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+//                    Settings.System.STATUS_BAR_TRAFFIC_COLOR, defaultColor);
+//        hexColor = String.format("#%08x", (0xffffffff & intColor));
+//        mTrafficColorPicker.setSummary(hexColor);
+//        mTrafficColorPicker.setNewPreviewColor(intColor);
 
         if (isTablet(mContext)) {
             mStatusBarTraffic.setEnabled(false);
