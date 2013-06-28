@@ -20,6 +20,7 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
     ColorPickerPreference mColorPicker;
     ColorPickerPreference mWifiColorPicker;
     CheckBoxPreference mHideSignal;
+    CheckBoxPreference mStatusBarTraffic;
     CheckBoxPreference mAltSignal;
 
     @Override
@@ -48,6 +49,11 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mHideSignal = (CheckBoxPreference) findPreference("hide_signal");
         mHideSignal.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUSBAR_HIDE_SIGNAL_BARS, false));
+        
+        mStatusBarTraffic = (CheckBoxPreference) findPreference("status_bar_traffic");
+        mStatusBarTraffic.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.STATUS_BAR_TRAFFIC, false));
+
 
         mAltSignal = (CheckBoxPreference) findPreference("alt_signal");
         mAltSignal.setChecked(Settings.System.getBoolean(mContentRes,
@@ -70,6 +76,12 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
                     Settings.System.STATUSBAR_HIDE_SIGNAL_BARS, mHideSignal.isChecked());
 
             return true;
+        } else if (preference == mStatusBarTraffic){
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.STATUS_BAR_TRAFFIC, mStatusBarTraffic.isChecked());
+
+            return true;
+
         } else if (preference == mAltSignal) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, mAltSignal.isChecked());

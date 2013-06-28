@@ -33,4 +33,11 @@
         android:title="@string/hide_signal_title"
         android:summary="@string/hide_signal_summary" />
 
+    <CheckBoxPreference
+        android:key="status_bar_traffic"
+        android:title="@string/show_network_speed_title"
+        android:summary="@string/show_network_speed_summary"
+        android:defaultValue="false" />
+
+
 </PreferenceScreen>
