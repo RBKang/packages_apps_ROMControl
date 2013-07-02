@@ -71,7 +71,7 @@
         <item>EEE MMMM dd</item>
         <item>EEEE dd/MM</item>
         <item>EEEE MM/dd</item>
-        <item>Custom java format</item>
+        <item>@string/custom_java_format</item>
     </string-array>
     <string-array name="clock_date_format_values">
         <item>dd/MM/yy</item>
